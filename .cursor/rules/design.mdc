@@ -1,3 +1,8 @@
+---
+description: 
+globs: *.vue
+alwaysApply: false
+---
 # Universal UI/UX Design Principles and User Flow
 
 ## Information Architecture & Cognitive Load
