@@ -1,8 +1,8 @@
 <template>
-  <div class="min-h-screen flex flex-col bg-background text-foreground transition-colors">
+  <div class="min-h-screen flex flex-col bg-background text-foreground transition-colors duration-300">
     <Navbar />
 
-    <main class="flex-1">
+    <main class="flex-1" role="main">
       <slot />
     </main>
 
