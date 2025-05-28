@@ -1,6 +1,6 @@
 # Nuxt Shadcn Boilerplate
 
-[![Nuxt Logo](https://nuxt.com/assets/design-kit/logo/icon-green.svg)](https://nuxt.com)
+[![Nuxt Logo](https://nuxt.com/assets/design-kit/logo-green-white.svg)](https://nuxt.com)
 
 **A modern, production-ready Nuxt 3 boilerplate with shadcn-vue, Tailwind CSS, VueUse, color mode, and SEO optimization.**
 
@@ -18,7 +18,6 @@ This boilerplate provides a solid foundation for building modern web application
 - **📱 Responsive Design** - Mobile-first approach with modern design patterns
 - **🔍 SEO Optimized** - Pre-configured SEO settings with meta tags and Open Graph
 - **⚡ Icons** - Nuxt Icon with Lucide Icons for beautiful iconography
-- **🧪 Testing Setup** - Vitest configuration for unit and component testing
 - **📦 TypeScript** - Full TypeScript support with auto-generated types
 - **🎯 Developer Experience** - ESLint, auto-imports, and excellent DX
 
@@ -29,7 +28,6 @@ This boilerplate provides a solid foundation for building modern web application
 - **Styling:** [Tailwind CSS v4](https://tailwindcss.com/)
 - **Icons:** [Nuxt Icon](https://nuxt.com/modules/icon) with [Lucide Icons](https://lucide.dev/)
 - **Utilities:** [VueUse](https://vueuse.org/)
-- **Testing:** [Vitest](https://vitest.dev/) with [Vue Test Utils](https://test-utils.vuejs.org/)
 - **Package Manager:** [Bun](https://bun.sh/) (recommended)
 
 ## 🚀 Quick Start
@@ -103,7 +101,6 @@ nuxt-shadcn-boilerplate/
 ├── package.json           # Dependencies and scripts
 ├── tailwind.config.js     # Tailwind CSS configuration
 ├── tsconfig.json          # TypeScript configuration
-└── vitest.config.ts       # Vitest testing configuration
 ```
 
 ## 🎨 Customization
@@ -114,7 +111,7 @@ This boilerplate uses shadcn-vue components. To add new components:
 
 ```bash
 # Add a new component (example: alert)
-npx shadcn-vue@latest add alert
+bunx shadcn-vue@latest add alert
 ```
 
 ### Styling
@@ -130,20 +127,6 @@ npx shadcn-vue@latest add alert
 - **TypeScript config:** `tsconfig.json`
 - **shadcn-vue config:** `components.json`
 
-## 🧪 Testing
-
-Run tests with:
-
-```bash
-# Run tests
-bun run test
-
-# Run tests in watch mode
-bun run test --watch
-
-# Run tests with coverage
-bun run test --coverage
-```
 
 ## 🏗️ Building for Production
 
@@ -180,13 +163,6 @@ Check out the [Nuxt deployment documentation](https://nuxt.com/docs/getting-star
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- [Nuxt.js](https://nuxt.com) team for the amazing framework
-- [shadcn](https://ui.shadcn.com/) for the beautiful component system
-- [Tailwind CSS](https://tailwindcss.com) for the utility-first CSS framework
-- [VueUse](https://vueuse.org) for the composition utilities
 
 ---
 
