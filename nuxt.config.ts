@@ -14,12 +14,14 @@ export default defineNuxtConfig({
   future: {
     compatibilityVersion: 4,
   },
+  // Basic SEO site configuration
   site: {
     url: 'https://example.com',
     name: 'Nuxt Shadcn Boilerplate',
-    description: 'A modern Nuxt 3 boilerplate with shadcn-vue, Tailwind CSS, VueUse, color mode, and SEO',
+    description: 'A modern Nuxt 4 boilerplate with shadcn-vue, Tailwind CSS, VueUse, color mode, and SEO',
     defaultLocale: 'en',
   },
+  // Simple SEO settings
   seo: {
     redirectToCanonicalSiteUrl: true,
   },

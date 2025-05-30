@@ -121,13 +121,14 @@
 </template>
 
 <script setup lang="ts">
-// Only set up SEO and demo state here, since layout handles navigation and footer
+// Basic SEO for the home page
 useSeoMeta({
   title: 'Nuxt Shadcn Boilerplate',
-  description: 'A modern Nuxt 3 boilerplate with shadcn-vue, Tailwind CSS, VueUse, color mode, and SEO optimization.',
+  description: 'A modern Nuxt 4 boilerplate with shadcn-vue, Tailwind CSS, VueUse, color mode, and SEO.',
   ogTitle: 'Nuxt Shadcn Boilerplate',
-  ogDescription: 'A modern Nuxt 3 boilerplate with shadcn-vue, Tailwind CSS, VueUse, color mode, and SEO optimization.',
+  ogDescription: 'A modern Nuxt 4 boilerplate with shadcn-vue, Tailwind CSS, VueUse, color mode, and SEO.',
   ogType: 'website',
-  twitterCard: 'summary_large_image',
 })
+
+defineOgImageComponent('NuxtSeo')
 </script>
