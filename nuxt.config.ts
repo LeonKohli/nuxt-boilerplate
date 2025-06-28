@@ -16,14 +16,9 @@ export default defineNuxtConfig({
   },
   // Basic SEO site configuration
   site: {
-    url: 'https://example.com',
     name: 'Nuxt Shadcn Boilerplate',
     description: 'A modern Nuxt 4 boilerplate with shadcn-vue, Tailwind CSS, VueUse, color mode, and SEO',
     defaultLocale: 'en',
-  },
-  // Simple SEO settings
-  seo: {
-    redirectToCanonicalSiteUrl: true,
   },
   css: ['~/assets/css/main.css'],
   shadcn: {
