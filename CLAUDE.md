@@ -112,7 +112,19 @@ The project uses Nuxt 4's app directory structure:
 ## Component Development
 
 1. **UI Components**: Use existing shadcn-vue components from `app/components/ui/`
-2. **Styling**: Use inline Tailwind classes only - no @apply directives
+2. **Styling**: 
+   - Use inline Tailwind classes only - no @apply directives
+   - **IMPORTANT**: Always use the predefined color variables from `app/assets/css/main.css`:
+     - `bg-background`, `text-foreground` for main content
+     - `bg-card`, `text-card-foreground` for cards
+     - `bg-primary`, `text-primary-foreground` for primary actions
+     - `bg-secondary`, `text-secondary-foreground` for secondary elements
+     - `bg-muted`, `text-muted-foreground` for muted/subtle content
+     - `bg-destructive`, `text-destructive-foreground` for errors/warnings
+     - `border-border` for borders
+     - `ring-ring` for focus states
+   - Never use arbitrary color values or Tailwind's default colors (e.g., avoid `bg-gray-500`, `text-blue-600`)
+   - The color system uses OKLCH color space and automatically adapts to dark/light modes
 3. **Icons**: Use `<Icon>` component from @nuxt/icon with Lucide icons
 
 ## SEO & Performance
