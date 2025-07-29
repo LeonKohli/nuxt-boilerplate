@@ -10,7 +10,7 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "test": "vitest",
-    "typecheck": "nuxi typecheck"
+    "typecheck": "nuxi typecheck -b"
   },
   "dependencies": {
     "@nuxt/icon": "1.15.0",
