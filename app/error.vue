@@ -5,6 +5,7 @@ const props = defineProps({
   error: Object as () => NuxtError
 })
 
+const router = useRouter()
 const handleError = () => clearError({ redirect: '/' })
 
 // Determine the error message and title based on status code
@@ -67,7 +68,7 @@ const errorMessage = computed(() => {
             Go home
           </Button>
           <Button
-            @click="$router.back()"
+            @click="router.back()"
             variant="outline"
             size="lg"
             class="min-w-[140px]"
