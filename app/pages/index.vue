@@ -91,6 +91,19 @@
       </div>
     </section>
 
+    <!-- Simple Counter -->
+    <section class="text-center mb-16">
+      <div class="inline-flex items-center gap-4">
+        <Button @click="counter--" size="icon" variant="ghost">
+          -
+        </Button>
+        <span class="text-2xl tabular-nums">{{ counter }}</span>
+        <Button @click="counter++" size="icon" variant="ghost">
+          +
+        </Button>
+      </div>
+    </section>
+
     <!-- Tech Stack -->
     <section class="text-center">
       <h2 class="text-3xl font-bold mb-8">Built With</h2>
@@ -121,7 +134,8 @@
 </template>
 
 <script setup lang="ts">
-// Basic SEO for the home page
+const counter = useCounter()
+
 useSeoMeta({
   title: 'Nuxt Shadcn Boilerplate',
   description: 'A modern Nuxt 4 boilerplate with shadcn-vue, Tailwind CSS, VueUse, color mode, and SEO.',

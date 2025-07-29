@@ -8,35 +8,41 @@ const props = defineProps({
 const router = useRouter()
 const handleError = () => clearError({ redirect: '/' })
 
-// Determine the error message and title based on status code
-const errorTitle = computed(() => {
-  if (props.error?.statusCode === 404) {
-    return 'Page not found'
+// Error status code constants
+const ERROR_CODES = {
+  NOT_FOUND: 404,
+  FORBIDDEN: 403,
+  SERVER_ERROR: 500
+} as const
+
+// Error messages mapping
+const ERROR_MESSAGES = {
+  [ERROR_CODES.NOT_FOUND]: {
+    title: 'Page not found',
+    message: "Sorry, the page you're looking for doesn't exist."
+  },
+  [ERROR_CODES.FORBIDDEN]: {
+    title: 'Access denied',
+    message: "You don't have permission to access this resource."
+  },
+  [ERROR_CODES.SERVER_ERROR]: {
+    title: 'Server error',
+    message: 'Something went wrong on our end. Please try again later.'
+  },
+  default: {
+    title: 'An error occurred',
+    message: 'Something unexpected happened. Please try again.'
   }
-  if (props.error?.statusCode === 403) {
-    return 'Access denied'
-  }
-  if (props.error?.statusCode === 500) {
-    return 'Server error'
-  }
-  return 'An error occurred'
+} as const
+
+const errorConfig = computed(() => {
+  const statusCode = props.error?.statusCode
+  return ERROR_MESSAGES[statusCode as keyof typeof ERROR_MESSAGES] || ERROR_MESSAGES.default
 })
 
-const errorMessage = computed(() => {
-  if (props.error?.statusMessage) {
-    return props.error.statusMessage
-  }
-  if (props.error?.statusCode === 404) {
-    return "Sorry, the page you're looking for doesn't exist."
-  }
-  if (props.error?.statusCode === 403) {
-    return "You don't have permission to access this resource."
-  }
-  if (props.error?.statusCode === 500) {
-    return 'Something went wrong on our end. Please try again later.'
-  }
-  return 'Something unexpected happened. Please try again.'
-})
+const errorTitle = computed(() => errorConfig.value.title)
+
+const errorMessage = computed(() => props.error?.statusMessage || errorConfig.value.message)
 </script>
 
 <template>
