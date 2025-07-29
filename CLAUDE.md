@@ -28,6 +28,25 @@ These files are managed by shadcn-vue and Reka UI, and are considered vendor or 
 - **Type Checking**: TypeScript with vue-tsc
 - **Utilities**: VueUse for composition utilities
 
+## Framework Priority Order
+
+When implementing features or making architectural decisions, always follow this priority:
+
+1. **Vue 3** - Core framework patterns take precedence
+   - Use native Vue features first (ref, computed, watch, etc.)
+   - Follow Vue 3 Composition API best practices
+   - Leverage Vue's built-in reactivity system
+
+2. **Nuxt 3** - Framework-specific features when needed
+   - Use Nuxt composables for SSR/routing/fetching
+   - Leverage auto-imports and file-based routing
+   - Apply Nuxt-specific patterns only when they add value
+
+3. **VueUse** - Utility composables as enhancements
+   - Use only when it significantly reduces code complexity
+   - Prefer Vue/Nuxt native solutions when available
+   - Add VueUse for non-trivial utilities (storage, DOM, sensors)
+
 ## Development Commands
 
 ```bash
@@ -72,14 +91,22 @@ The project uses Nuxt 4's app directory structure:
 
 2. **No manual imports for Vue/Nuxt functions** - They are auto-imported
 
-3. **Data Fetching**:
+3. **Reactivity Patterns (Vue > Nuxt > VueUse)**:
+   - **Vue first**: Use `ref()`, `computed()`, `watch()` for reactivity
+   - **Nuxt second**: Use `useState()` only for SSR-shared state
+   - **VueUse last**: Use utilities like `useStorage()` only when they add significant value
+
+4. **Data Fetching**:
    - Use `useFetch` for SSR-optimized requests
    - Use `$fetch` for client-side only requests
    - Use `useAsyncData` for complex data fetching scenarios
 
-4. **State Management**: Use `useState` for cross-component reactive state
+5. **State Management**:
+   - **Local component state**: Use Vue's `ref()` or `reactive()`
+   - **Cross-component state**: Use Nuxt's `useState()`
+   - **Persisted state**: Consider VueUse's `useStorage()` only if needed
 
-5. **Error Handling**:
+6. **Error Handling**:
    - Client: `throw createError('Error message')`
    - Server: `throw createError({ statusCode: 404, statusMessage: 'Not found' })`
 
