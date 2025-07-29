@@ -7,7 +7,7 @@
     </main>
 
     <footer role="contentinfo" class="py-6 px-4 text-center text-xs text-muted-foreground border-t">
-      <p>&copy; {{ new Date().getFullYear() }} Nuxt Shadcn Boilerplate. Built with modern web technologies.</p>
+      <p>&copy; {{ currentYear }} Nuxt Shadcn Boilerplate. Built with modern web technologies.</p>
       <p class="mt-2 text-xs text-muted-foreground">
         A production-ready starter template for your next project.
       </p>
@@ -16,6 +16,9 @@
 </template>
 
 <script setup lang="ts">
+// Compute current year for footer
+const currentYear = computed(() => new Date().getFullYear())
+
 // Basic SEO meta tags for the layout
 useSeoMeta({
   title: 'Nuxt Shadcn Boilerplate',

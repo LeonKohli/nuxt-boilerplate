@@ -7,7 +7,7 @@
       <NuxtLink to="/" class="flex items-center space-x-3 group" aria-label="Home">
         <Icon name="lucide:zap" class="h-8 w-8 text-primary" />
         <div>
-          <span class="font-semibold text-lg tracking-tigh">Nuxt Shadcn Boilerplate</span>
+          <span class="font-semibold text-lg tracking-tight">Nuxt Shadcn Boilerplate</span>
           <p class="text-xs text-muted-foreground hidden md:block">Modern development stack</p>
         </div>
       </NuxtLink>

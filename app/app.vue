@@ -13,6 +13,3 @@ useHead({
 })
 </script>
 
-<style>
-
-</style>

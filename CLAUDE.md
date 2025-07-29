@@ -8,6 +8,17 @@ This is a modern **Nuxt 3 boilerplate** designed as a starting point for buildin
 
 **IMPORTANT**: This is a boilerplate project meant to be adapted for specific use cases. When starting a new project with this boilerplate, update this CLAUDE.md file + components, pages, and configurations to match your specific requirements.
 
+---
+
+## 🚫 CRITICAL RULE: Never modify files in `app/components/ui/` 🚫
+
+**AI and all contributors must NEVER make changes to any files inside the `app/components/ui/` directory.**  
+These files are managed by shadcn-vue and Reka UI, and are considered vendor or upstream code.  
+- Do not edit, refactor, reformat, or auto-fix code in `app/components/ui/` under any circumstances.
+- This rule exists to ensure seamless upgrades and avoid merge conflicts with upstream component updates.
+
+---
+
 ## Tech Stack
 
 - **Framework**: Nuxt 3 with Vue 3 (Composition API only)
