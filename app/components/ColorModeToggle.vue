@@ -18,9 +18,7 @@ const icon = computed(() => isDarkMode.value ? 'lucide:moon' : 'lucide:sun')
 const label = computed(() => isDarkMode.value ? 'Switch to light mode' : 'Switch to dark mode')
 
 function toggle() {
-  const isSystemPreference = colorMode.preference === 'system'
   const targetMode = isDarkMode.value ? 'light' : 'dark'
-  
   colorMode.preference = targetMode
 }
 </script>
